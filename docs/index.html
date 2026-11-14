@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Watermeter – Brochure</title>
+<meta name="description" content="Smart and connected water meter: HMC5883L magnetometer, ESP8266, signal processing, TinyML, MQTT and GSM.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smart Watermeter">
+<meta property="og:description" content="Connected metering with signal processing and TinyML: from a turning meter to cloud data.">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef8fa;--ink:#062a38;--mute:#4a6a77;--card:#fff;--line:#cfe3e8;--teal:#0fa3b8;--lime:#9be015;--navy:#052a3a;--bad:#e5484d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#041823;--ink:#e6f6fa;--mute:#98b8c3;--card:#0a2a3a;--line:#16414f}}
+:root[data-theme="dark"]{--bg:#041823;--ink:#e6f6fa;--mute:#98b8c3;--card:#0a2a3a;--line:#16414f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.08;margin:0;font-weight:800;letter-spacing:-.02em}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-weight:500}nav b{font:800 22px Sora,sans-serif}nav b i{color:var(--teal);font-style:normal}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hs{display:grid;background:#03141f;border-radius:14px;overflow:hidden;margin-bottom:24px}
+.hsl{grid-area:1/1;opacity:0;transition:opacity .8s;pointer-events:none}.hsl.on{opacity:1;pointer-events:auto}
+.hsl img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.hsl.fit img{object-fit:contain;background:#fff}
+.cap{margin:0;color:#fff;padding:12px 16px 0;text-align:center;font-size:16px}
+.cc{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px}.hs .cc{grid-area:2/1}
+.cc button{width:40px;height:40px;border:2px solid var(--ink);background:var(--card);color:var(--ink);font:700 22px/1 Sora,sans-serif;cursor:pointer;border-radius:10px}.hs .cc button{background:#0008;border-color:#fff;color:#fff}
+button:focus-visible,.track:focus-visible,input:focus-visible{outline:3px solid #f2c200;outline-offset:2px}
+.dots{display:flex;gap:8px}.dots i{width:10px;height:10px;border-radius:50%;background:#7fa0ad;opacity:.6}.dots i.on{background:var(--lime);opacity:1;outline:1px solid #052a3a}
+.lead{font-size:20px;color:var(--mute);max-width:64ch;margin:28px 0 0}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.tag{background:var(--navy);color:#fff;padding:6px 14px;border-radius:99px;font-size:15px;font-weight:600}
+section{padding:60px 0;border-top:1px solid var(--line)}section h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:12px}
+.sub{color:var(--mute);max-width:64ch;margin:0 0 30px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}.c h3{font-size:22px;margin-bottom:6px}.c p{margin:0;color:var(--mute)}.c .n{font:800 34px Sora,sans-serif;color:var(--teal)}
+.demo{background:linear-gradient(160deg,#03141f,#06364a);color:#e6f6fa;border-radius:18px;padding:22px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}.tile{background:#ffffff14;border-radius:12px;padding:10px 14px}.tile small{display:block;color:#a3c9d3;font-size:13px}.tile b{font:800 26px Sora,sans-serif}
+.tile.warn b{color:#ffb4b4}.tile.ok b{color:var(--lime)}
+canvas{width:100%;height:300px;display:block;background:#02101a;border-radius:12px}
+.ctl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}.ctl label{display:grid;gap:4px;font-size:14px;color:#cfe8ee}.ctl input{width:100%;accent-color:var(--lime)}.ctl output{font-weight:700;color:#fff}
+.note{font-size:14px;color:#a3c9d3;margin:12px 0 0;min-height:44px}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
+.sl{flex:0 0 100%;scroll-snap-align:center;margin:0;display:grid;grid-template-columns:1.6fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:340px}
+.sl img{width:100%;height:100%;max-height:470px;object-fit:contain;background:#fff;display:block}
+.sl figcaption,.sl.tx>div{padding:24px;align-self:center}.sl.tx{grid-template-columns:1fr}
+.sl h3{font-size:26px;margin-bottom:8px}.sl p{margin:0 0 8px;color:var(--mute)}.sl ul{margin:10px 0 0;padding-left:20px;color:var(--mute)}.sl li{margin:4px 0}
+pre{background:#03141f;color:#cfe8ee;border-radius:10px;padding:14px;font:13px/1.5 'DejaVu Sans Mono',Consolas,monospace;overflow-x:auto;margin:10px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-weight:500}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.team div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}.team small{display:block;color:var(--mute);font-size:14px;margin-bottom:4px}.team strong{font:800 20px Sora,sans-serif}
+footer{background:var(--navy);color:#e6f6fa;padding:32px 0}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer p{margin:2px 0;color:#a3c9d3}
+@media (max-width:900px){.g3,.team{grid-template-columns:1fr}.sl{grid-template-columns:1fr}.tiles{grid-template-columns:1fr 1fr}.ctl{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Smart<i>Watermeter</i></b><span>IoT · Embedded software · TinyML</span></nav>
+<div class="hs" id="hs" aria-roledescription="carousel" aria-label="Project overview"><h1 class="sr">Smart Watermeter</h1>
+<div class="hsl on"><img src="assets/water-meter-with-magnetometer-esp8266-si.jpg" alt="Water meter with magnetometer, ESP8266, signal pipeline, cloud and phone"><p class="cap">Smart and connected water metering</p></div>
+<div class="hsl fit"><img src="assets/smoothed-signal-chart.jpg" alt="Smoothed signal chart"><p class="cap">The smoothed signal analysed in Colab</p></div>
+<div class="hsl fit"><img src="assets/magnetometer-axes-in-the-arduino-plotter.jpg" alt="Magnetometer axes in the Arduino plotter"><p class="cap">The three magnetometer axes in the Arduino plotter</p></div>
+<div class="cc"><button class="pv" aria-label="Previous slide">‹</button><span class="dots"></span><button class="nx" aria-label="Next slide">›</button></div></div>
+<p class="lead">A smart and connected water metering system. A magnetometer reads the meter, an embedded algorithm cleans the signal and counts the flow, and the data travels to the cloud over MQTT and GSM.</p>
+<div class="tags"><span class="tag">HMC5883L</span><span class="tag">ESP8266</span><span class="tag">C++ · RTOS</span><span class="tag">TensorFlow Lite · TinyML</span><span class="tag">MQTT · GSM</span></div>
+
+<section>
+<h2>From a turning meter to cloud data</h2>
+<p class="sub">Three steps turn the movement of a mechanical water meter into a reliable number you can follow remotely.</p>
+<div class="g3">
+<div class="c"><div class="n">01</div><h3>Sense</h3><p>An HMC5883L magnetometer on the I2C bus measures the magnetic field around the meter on three axes.</p></div>
+<div class="c"><div class="n">02</div><h3>Process</h3><p>A moving average smooths the signal. A state machine detects rising and falling edges and counts each cycle as one step.</p></div>
+<div class="c"><div class="n">03</div><h3>Connect</h3><p>The metering metrics are sent to the cloud with the MQTT protocol, using GSM where there is no Wi-Fi.</p></div>
+</div>
+</section>
+
+<section id="demo">
+<h2>Try the signal pipeline</h2>
+<p class="sub">A simulation of the algorithm in the firmware: a moving average, then edge detection with a state machine, then step counting. Change the noise and the smoothing window and watch the count.</p>
+<div class="demo"><div class="tiles"><div class="tile"><small>Water volume</small><b id="vV">0.0 L</b></div><div class="tile"><small>Flow</small><b id="vF">0.0 L/min</b></div><div class="tile"><small>Steps counted</small><b id="vC">0</b></div><div class="tile" id="tE"><small>Real turns</small><b id="vE">0</b></div></div>
+<canvas id="cv" aria-label="Raw, smoothed and pulse signals"></canvas>
+<div class="ctl"><label>Flow speed<input type="range" id="sF" min="1" max="10" value="4"><output id="oF"></output></label><label>Noise<input type="range" id="sN" min="0" max="100" value="35"><output id="oN"></output></label><label>Smoothing window<input type="range" id="sW" min="1" max="50" value="12"><output id="oW"></output></label><label>Litres per step<input type="range" id="sL" min="1" max="20" value="5"><output id="oL"></output></label></div>
+<p class="note" id="nt"></p></div>
+</section>
+
+<section id="data"><h2>From sensor to data</h2><p class="sub">Collecting the magnetometer signal and analysing it with Python.</p><div class="car" aria-roledescription="carousel" aria-label="From sensor to data"><div class="track" tabindex="0"><figure class="sl"><img src="assets/arduino-plotter-with-the-x-y-and-z-axes.jpg" alt="Arduino plotter with the X, Y and Z axes"><figcaption><h3>Raw magnetometer axes</h3><p>The Arduino plotter shows the three axes of the HMC5883L. X and Y oscillate while Z stays almost flat, so the useful signal is on X.</p></figcaption></figure><figure class="sl"><img src="assets/tera-term-serial-connection.jpg" alt="Tera Term serial connection"><figcaption><h3>Capturing the stream</h3><p>Tera Term connects to the CH340 USB-serial adapter on COM4 to record the values sent by the board.</p></figcaption></figure><figure class="sl"><img src="assets/excel-sheet-with-smoothed-signal-values.jpg" alt="Excel sheet with smoothed signal values"><figcaption><h3>Logged values</h3><p>The captured lines (smoothed_signal values) are saved to Excel, ready for analysis.</p></figcaption></figure><figure class="sl"><img src="assets/line-chart-of-the-smoothed-signal-in-goo.jpg" alt="Line chart of the smoothed signal in Google Colab"><figcaption><h3>Analysis in Colab</h3><p>Pandas and Matplotlib plot the smoothed signal. It rises and falls between about 22.2 and 23.5, and each wave is one cycle to count.</p></figcaption></figure><figure class="sl"><img src="assets/rectangular-pulse-signal.jpg" alt="Rectangular pulse signal"><figcaption><h3>Pulses from the state machine</h3><p>Edge detection turns the smoothed wave into a rectangular signal. Each pulse is one counted step.</p></figcaption></figure></div><div class="cc"><button class="pv" aria-label="Previous slide">‹</button><span class="dots"></span><button class="nx" aria-label="Next slide">›</button></div></div></section>
+<section id="firmware"><h2>Firmware and TinyML</h2><p class="sub">Embedded C++ on an ESP8266, and a small neural network ready to run on the device.</p><div class="car" aria-roledescription="carousel" aria-label="Firmware and TinyML"><div class="track" tabindex="0"><figure class="sl"><img src="assets/platformio-project-in-vs-code.jpg" alt="PlatformIO project in VS Code"><figcaption><h3>PlatformIO project</h3><p>An ESP8266 (esp12e) project on the Arduino framework at 115200 baud. The code is layered: adaptors, components, systems and a BSP header.</p></figcaption></figure><div class="sl tx"><div><h3>Signal processing in C++</h3><p>The sketch reads the HMC5883L over I2C (address 0x1E) and applies three steps.</p><ul><li><b>Moving average</b> over a window of 50 samples</li><li><b>Table shifting</b> keeps the last smoothed values</li><li><b>State machine</b> with INIT, FRONT_MOUNT, FRONT_DESCENT and STABLE</li><li>A step is counted when the sequence descent, mount, descent is seen</li></ul><pre>signal_states = FRONT_MOUNT;
+if (states[0]==DESCENT &amp;&amp;
+    states[1]==MOUNT &amp;&amp;
+    states[2]==DESCENT)
+    counter++;</pre></div></div><div class="sl tx"><div><h3>TinyML with TensorFlow Lite</h3><p>A small neural network was trained in Python on 2,206 samples, then converted for the microcontroller.</p><ul><li>Dense layers of 16, 16 and 1 units</li><li>RMSprop optimiser, mean absolute error, 500 epochs</li><li>20 % of the samples for validation and 20 % for test</li><li>Converted to a .tflite model, then to a C header to embed in the firmware</li></ul></div></div><div class="sl tx"><div><h3>IoT and RTOS</h3><p>The metering metrics are computed by an algorithm in C++ with an RTOS, based on the data analysis. The results are sent to the cloud with the <b>MQTT</b> protocol, using <b>GSM</b> for the transmission.</p></div></div></div><div class="cc"><button class="pv" aria-label="Previous slide">‹</button><span class="dots"></span><button class="nx" aria-label="Next slide">›</button></div></div></section>
+
+<section>
+<h2>Toolbox</h2>
+<p class="sub">From data analysis to embedded AI and cloud transmission.</p>
+<div class="chips"><span class="chip">C++</span><span class="chip">RTOS</span><span class="chip">Arduino framework</span><span class="chip">PlatformIO</span><span class="chip">ESP8266</span><span class="chip">I2C · HMC5883L</span><span class="chip">Python · Pandas · Matplotlib</span><span class="chip">Arduino Plotter</span><span class="chip">TensorFlow Lite · TinyML</span><span class="chip">MQTT</span><span class="chip">GSM</span><span class="chip">Tera Term · Excel · Colab</span></div>
+</section>
+
+<section>
+<h2>Behind the project</h2>
+<p class="sub">Smart and connected water meter system, August 2024.</p>
+<div class="team"><div><small>Design and development</small><strong>Houssem Khadhraoui</strong></div><div><small>M.Sc</small><strong>Data and Computer Science, IoT Services Development</strong></div><div><small>B.Sc</small><strong>Computer Science, Embedded Software Engineering</strong></div></div>
+</section>
+</div>
+<footer><div class="wrap"><div><b style="font:800 22px Sora,sans-serif">Smart Watermeter</b><p>Contact: add your email or LinkedIn here</p></div><p>IoT · Embedded · TinyML</p></div></footer>
+<script>
+var WP="";
+function dots(c,n,f){var d=c.querySelector('.dots');for(var i=0;i<n;i++)d.appendChild(document.createElement('i'));f(0)}
+document.querySelectorAll('.car').forEach(function(c){var t=c.querySelector('.track'),n=t.children.length;
+function mark(i){var d=c.querySelectorAll('.dots i');for(var k=0;k<d.length;k++)d[k].className=k==i?'on':''}
+dots(c,n,mark);function go(d){t.scrollBy({left:d*t.clientWidth,behavior:'smooth'})}
+c.querySelector('.pv').onclick=function(){go(-1)};c.querySelector('.nx').onclick=function(){go(1)};
+t.addEventListener('scroll',function(){mark(Math.round(t.scrollLeft/(t.clientWidth+16)))})});
+(function(){var h=document.getElementById('hs'),s=h.querySelectorAll('.hsl'),i=0,tm,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function show(k){i=(k+s.length)%s.length;for(var j=0;j<s.length;j++)s[j].classList.toggle('on',j==i);var d=h.querySelectorAll('.dots i');for(j=0;j<d.length;j++)d[j].className=j==i?'on':''}
+dots(h,s.length,show);function auto(){if(!rm){clearInterval(tm);tm=setInterval(function(){show(i+1)},5000)}}
+h.querySelector('.pv').onclick=function(){show(i-1);auto()};h.querySelector('.nx').onclick=function(){show(i+1);auto()};
+h.addEventListener('mouseenter',function(){clearInterval(tm)});h.addEventListener('mouseleave',auto);show(0);auto()})();
+/* signal pipeline simulation */
+var $=function(i){return document.getElementById(i)},cv=$('cv'),cx=cv.getContext('2d'),N=300,raw=[],sm=[],pl=[],win=[],t=0,cnt=0,real=0,hi=false,hist=[];
+function reset(){raw=[];sm=[];pl=[];win=[];cnt=0;real=0;hi=false;hist=[];t=0}
+function step(){var f=+$('sF').value/4,nz=+$('sN').value/100,W=+$('sW').value,dt=.04;t+=dt;real+=f*.5*dt;
+var v=Math.sin(6.2832*f*t*.5)+ (Math.random()-.5)*2*nz*1.6;raw.push(v);win.push(v);while(win.length>W)win.shift();
+var a=win.reduce(function(p,q){return p+q},0)/win.length;sm.push(a);
+var was=hi;if(a>.25)hi=true;else if(a<-.25)hi=false;if(hi&&!was){cnt++;hist.push(t)}
+pl.push(hi?1:-1);[raw,sm,pl].forEach(function(z){while(z.length>N)z.shift()})}
+function draw(){var L=+$('sL').value,w=cv.clientWidth,h=cv.clientHeight,r=devicePixelRatio||1;cv.width=w*r;cv.height=h*r;cx.setTransform(r,0,0,r,0,0);cx.clearRect(0,0,w,h);
+var rows=[['RAW',raw,'#8aa7b4'],['SMOOTHED',sm,'#19c3d6'],['PULSES',pl,'#9be015']],rh=h/3;cx.font='12px Inter,sans-serif';
+rows.forEach(function(q,i){var y0=rh*i+rh/2;cx.strokeStyle='#16414f';cx.lineWidth=1;cx.beginPath();cx.moveTo(0,y0);cx.lineTo(w,y0);cx.stroke();cx.fillStyle=q[2];cx.fillText(q[0],8,rh*i+16);cx.strokeStyle=q[2];cx.lineWidth=2.2;cx.beginPath();
+q[1].forEach(function(v,k){var x=w*k/(N-1),y=y0-Math.max(-1.6,Math.min(1.6,v))*(rh*.28);k?cx.lineTo(x,y):cx.moveTo(x,y)});cx.stroke()});
+var recent=hist.filter(function(x){return t-x<10}).length;
+$('vV').textContent=(cnt*L/10).toFixed(1)+' L';$('vF').textContent=(recent*L/10*6).toFixed(1)+' L/min';$('vC').textContent=cnt;$('vE').textContent=Math.floor(real);
+var d=cnt-Math.floor(real);$('tE').className='tile '+(Math.abs(d)<=2?'ok':'warn');
+$('nt').textContent=Math.abs(d)<=2?'The count follows the real turns: the filter removes the noise.':(d>0?'The noise creates false edges, so extra steps are counted. Increase the smoothing window.':'A very wide window flattens the signal and steps are missed. Reduce the window or the flow speed.');
+$('oF').textContent=$('sF').value;$('oN').textContent=$('sN').value+' %';$('oW').textContent=$('sW').value;$('oL').textContent=(L/10).toFixed(1)+' L'}
+['sF','sN','sW'].forEach(function(id){$(id).oninput=function(){reset()}});$('sL').oninput=draw;
+reset();setInterval(function(){for(var k=0;k<2;k++)step();draw()},60);
+</script>
+</body>
+</html>
